@@ -1,6 +1,7 @@
 # Objective
-This document describes how to add additional information as part of the SupplementaryData1 XSD Type. To illustrate the mechanism a smaller representative schema is used rather than the actual MiFiD II Schema. 
-Background
+This document describes how to add additional information as part of xs Any XSD Type. 
+
+# Background
 The XS <any> element enables authors to extend the XML document with elements not specified by the schema. This allows placement of any arbitrary XML data type including simple and complex types. In the schema named person.xsd [below] any tag can be placed after the lastname tag. For example
 ```xml
 <lastname>Mukherjee</lastname>
