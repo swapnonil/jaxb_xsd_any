@@ -62,7 +62,7 @@ xjc –d [output directory] –p [packagename] person-extra.xsd
 
 This will generate two classes PersonType.java and ObjectFactory.java inside the named package.
 Also add the annotation XMLRootElement(name=”address”) to the AddressType.java file.
-Step5 
+## Step5 
 Write the following code to try out this mechanism
 ```java
 package com.swapnonil;
