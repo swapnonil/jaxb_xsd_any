@@ -52,13 +52,16 @@ Create another XSD schema that describes the additional XML which will form a pa
 ```
 ## Step 3
 Generate Java Types for person.xsd
+```bash
 xjc –d [output directory] –p [packagename] person.xsd
-
+```
 This will generate two classes PersonType.java and ObjectFactory.java inside the named package.
-Also add the annotation XMLRootElement(name=”person”) to the PersonType.java file. JAXB does not add any root element annotation if the root element is an user defined type.
+Also add the annotation XMLRootElement(name=”person”) to the PersonType.java file as JAXB does not add any root element annotation if the root element is an user defined type.
 ## Step 4
 Generate Java Types for person-extra.xsd
+```bash
 xjc –d [output directory] –p [packagename] person-extra.xsd
+```
 
 This will generate two classes PersonType.java and ObjectFactory.java inside the named package.
 Also add the annotation XMLRootElement(name=”address”) to the AddressType.java file.
@@ -132,5 +135,5 @@ public class App {
     }
 }
 ```
-The example above creates a PersonType and also adds an AddressType. It serialises it to a StringWriter and then reads it off again. To enable this ability to read and write both the Peron and Address types the highlighted line shows that it must be included in the JAXB Context.
+The example above creates a PersonType and also adds an AddressType. It serialises it to a StringWriter and then reads it off again. To enable this ability to read and write both the Peron and Address types it must be included in the JAXB Context ```java JAXBContext context = JAXBContext.newInstance(PersonType.class, AddressType.class);```
 
