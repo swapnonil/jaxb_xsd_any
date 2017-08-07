@@ -135,5 +135,8 @@ public class App {
     }
 }
 ```
-The example above creates a PersonType and also adds an AddressType. It serialises it to a StringWriter and then reads it off again. To enable this ability to read and write both the Peron and Address types it must be included in the JAXB Context ```java JAXBContext context = JAXBContext.newInstance(PersonType.class, AddressType.class);```
+The example above creates a PersonType and also adds an AddressType. It serialises it to a StringWriter and then reads it off again. To enable this ability to read and write both the Peron and Address types it must be included in the JAXB Context 
+```java 
+JAXBContext context = JAXBContext.newInstance(PersonType.class, AddressType.class);
+```
 
