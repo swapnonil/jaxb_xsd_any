@@ -2,7 +2,7 @@
 This document describes how to add additional information as part of xs Any XSD Type. 
 
 # Background
-The XS <any> element enables authors to extend the XML document with elements not specified by the schema. This allows placement of any arbitrary XML data type including simple and complex types. In the schema named person.xsd [below] any tag can be placed after the lastname tag. For example
+The XS Any element enables authors to extend the XML document with elements not specified by the schema. This allows placement of any arbitrary XML data type including simple and complex types. In the schema named person.xsd [below] any tag can be placed after the lastname tag. For example
 ```xml
 <lastname>Mukherjee</lastname>
 </otherInfo>Some other info</otherInfo>
@@ -18,7 +18,7 @@ Are both valid uses of the schema type xs:any.
 JAXB has specific ways to dealing with XS Any. There are 2 ways mainly.
 1.	Schema Driven: Create additional XSD for any additional schema and create a class that maps onto this additional schema. This document describes this approach.
 2.	DOM Driven: Create and Serialize org.w3.dom.Element inside JAXB classes and read the same as DOM element. This approach cannot be schema validated though and hence not described here.
-Schema Drive Method
+# Schema Driven Method
 ## Step1
 Create an XSD Schema which has xs:any as part of its definition. Name it as person.xsd
 ```xsd
