@@ -2,7 +2,25 @@
 This document describes how to add additional information as part of xs Any XSD Type. 
 
 # Background
-The XS Any element enables authors to extend the XML document with elements not specified by the schema. This allows placement of any arbitrary XML data type including simple and complex types. In the schema named person.xsd [below] any tag can be placed after the lastname tag. For example
+The XS Any element enables authors to extend the XML document with elements not specified by the schema. This allows placement of any arbitrary XML data type including simple and complex types. 
+Suppose there is a schema named person.xsd.
+
+```xsd
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="person" type="personType"/>
+    <xs:complexType name="personType">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element name="lastname" type="xs:string"/>
+            <xs:any namespace="##any" processContents="lax"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+```
+
+In the schema named person.xsd [below] any tag can be placed after the lastname tag. For example
 ```xml
 <lastname>Mukherjee</lastname>
 </otherInfo>Some other info</otherInfo>
